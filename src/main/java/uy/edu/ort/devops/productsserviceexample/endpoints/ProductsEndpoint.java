@@ -12,7 +12,8 @@ import uy.edu.ort.devops.productsserviceexample.logic.ProductsLogic;
 import java.util.Collection;
 
 @RestController
-@RequestMapping("/products")
+// @RequestMapping("/products")
+@RequestMapping("/")
 public class ProductsEndpoint {
 
     @Autowired

@@ -1,7 +1,7 @@
 {
 	"info": {
 		"_postman_id": "008eaed7-c037-45ff-a0c8-750386f57b62",
-		"name": "Products",
+		"name": "msProducts",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
@@ -27,7 +27,7 @@
 							"    pm.expect(responseJson[0].description).to.be.a('string');\r",
 							"})\r",
 							"\r",
-							"pm.test(\"Response time < 500ms\", () => {\r",
+							"pm.test(\"Response time below 500ms\", () => {\r",
 							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
 							"})"
 						],

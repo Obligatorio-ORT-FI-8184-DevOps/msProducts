@@ -1,0 +1,56 @@
+{
+	"info": {
+		"_postman_id": "008eaed7-c037-45ff-a0c8-750386f57b62",
+		"name": "Products",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code & body format\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"    pm.response.to.be.ok;\r",
+							"    pm.response.to.be.json;\r",
+							"})\r",
+							"\r",
+							"pm.test(\"All properties & data types\", () => {\r",
+							"    const responseJson = pm.response.json();\r",
+							"    pm.expect(responseJson).to.be.an('array');\r",
+							"    pm.expect(responseJson[0].id).to.be.a('string');\r",
+							"    pm.expect(responseJson[0].name).to.be.a('string');\r",
+							"    pm.expect(responseJson[0].stock).to.be.a('number');\r",
+							"    pm.expect(responseJson[0].description).to.be.a('string');\r",
+							"})\r",
+							"\r",
+							"pm.test(\"Response time < 500ms\", () => {\r",
+							"  pm.expect(pm.response.responseTime).to.be.below(500);\r",
+							"})"
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8080/products",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"products"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
